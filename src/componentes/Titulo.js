@@ -4,7 +4,7 @@ class Titulo extends Component {
   render() {
     return (
       <div>
-        <h1>XXX</h1>
+        <h1>Movie</h1>
         <p>zzzz></p>
       </div>
     );
