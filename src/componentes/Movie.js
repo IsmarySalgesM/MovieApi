@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Button } from 'reactstrap';
 class Movie extends Component {
   render() {
     return (
@@ -10,6 +10,7 @@ class Movie extends Component {
         {this.props.awards && <p> Premiaciones: {this.props.awards} </p>}
         {this.props.actors && <p> Actores: {this.props.actors} </p>}
         {this.props.error && alert(this.props.error)}
+      <Button>ol</Button>
       </div>
     );
   }
