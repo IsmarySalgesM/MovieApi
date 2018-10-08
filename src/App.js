@@ -12,8 +12,8 @@ class App extends Component {
       runtime: undefined,
       awards: undefined,
       actors: undefined,
-      img:undefined,
-      error: null,
+      img: undefined,
+      error: undefined,
     }
   }
 
@@ -22,8 +22,8 @@ class App extends Component {
     const trailer = e.target.elements.movie.value;
     const apiMovie = await fetch(`http://www.omdbapi.com/?t=${trailer}&apikey=540c9b7f `)
     const dataMovie = await apiMovie.json();
-    
-    if(trailer === true){
+
+    if (trailer) {
       console.log(dataMovie);
       this.setState({
         year: dataMovie.Year,
@@ -32,10 +32,10 @@ class App extends Component {
         awards: dataMovie.Awards,
         actors: dataMovie.Actors,
         img: dataMovie.Poster,
-        error: " "
+        error: dataMovie.Error
       })
-  
-    }else{
+
+    } else {
       this.setState({
         year: undefined,
         title: undefined,
@@ -43,14 +43,10 @@ class App extends Component {
         awards: undefined,
         actors: undefined,
         img: undefined,
-        error: "Lo sentimos, esa movie no esta en nuestra data"
+        
       })
     }
-    }
-    
-    
-    
-
+  }
 
 
   render() {
