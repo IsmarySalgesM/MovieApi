@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
 class Movie extends Component {
   render() {
     return (
@@ -9,8 +8,9 @@ class Movie extends Component {
         {this.props.runtime && <p> Duración: {this.props.runtime} </p>}
         {this.props.awards && <p> Premiaciones: {this.props.awards} </p>}
         {this.props.actors && <p> Actores: {this.props.actors} </p>}
+        {this.props.img && <p> Poster : <img className="imgPoster" src={this.props.img} alt="MovieApp" ></img></p>}
         {this.props.error && alert(this.props.error)}
-      <Button>ol</Button>
+    
       </div>
     );
   }
