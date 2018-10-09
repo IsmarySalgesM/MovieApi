@@ -1,6 +1,7 @@
 import React from "react";
 import { mount, configure } from "enzyme";
 import Form from "../src/componentes/Form";
+import Titulo from "../src/componentes/Titulo"
 import Adapter from "enzyme-adapter-react-16";
 
 configure({
@@ -37,3 +38,36 @@ describe("Form", () => {
   });
 
 })
+
+describe("Titulo", () => {
+  let props;
+  let mountedTituloComponent;
+  const tituloComponent = () => {
+    if (!mountedTituloComponent) {
+      mountedTituloComponent = mount(
+        <Titulo {...props} />
+      );
+    }
+    return mountedTituloComponent;
+  }
+ 
+  beforeEach(() => {
+    props = {
+      movies: []
+    };
+    mountedTituloComponent = undefined;
+  });
+ 
+  it("Always renders a div", () => {
+    const divs = tituloComponent().find("div");
+    expect(divs.length).toBeGreaterThan(0);
+  });
+ 
+ it ("Has an h1 with text 'MovieApp'", () => {
+    expect(tituloComponent().find("h3").first().text()).toBe("MovieApp");
+  });
+
+})
+
+
+
