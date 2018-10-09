@@ -8,10 +8,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      year: undefined,
-      title: undefined,
-      img: undefined,
-      error: undefined,
+    movies : []
     }
   }
 
@@ -24,26 +21,12 @@ class App extends Component {
 
 
     if (trailer) {
-      const movieMap = dataMovie.Search
-      movieMap.map((elements) => {
-        console.log(elements)
-        this.setState({
-          year: elements.Year,
-          title: elements.Title,
-          img: elements.Poster,
-          error: elements.Error
-        })
-
-
-      })
-
-
-
+      let movieMap = dataMovie.Search
+      console.log(movieMap)
+     this.setState({movies: movieMap})
     } else {
       this.setState({
-        year: undefined,
-        title: undefined,
-        img: undefined,
+        movies : undefined
 
 
       })
@@ -52,6 +35,7 @@ class App extends Component {
 
 
   render() {
+    console.log(this.state.movies)
     return (
       <div>
         <div className="wrapper">
@@ -64,10 +48,7 @@ class App extends Component {
                 <div className="col-12 col-md-8 form-container">
                   <Form getMovie={this.getMovie} />
                   <Movie
-                    year={this.state.year}
-                    title={this.state.title}
-                    img={this.state.img}
-                    error={this.state.error}
+                    movies={this.state.movies}
                   />
                 </div>
               </div>

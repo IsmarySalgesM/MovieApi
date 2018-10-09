@@ -1,34 +1,33 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'reactstrap';
+import { Card } from 'reactstrap';
 
 
 
 class Movie extends Component {
+  constructor(props){
+    super(props);
+
+  
+  }
   render() {
+    // console.log(this.props.movies)
     return (
-
-      <div>
-
-        {this.props.title && this.props.img && <Card className="scale-in-center">
-          <p>Pelicula: {this.props.title}</p>
-          {this.props.year && <p>Año de Publicación: {this.props.year} </p>}
-          {this.props.error && alert(this.props.error)}
-          <p>Poster : <img className="imgPoster rounded-circle"
-          src={this.props.img} height="70" width="70" alt="MovieApp" ></img></p>
-
-
-
-        </Card>}
-
-
-
-
+      <div className='App-main'>
+        {
+          this.props.movies.map(elementMovie => {
+            console.log(elementMovie)
+            return (
+              <div className='App-box'>
+                <p> {elementMovie.Title} </p>           
+              </div>
+            )
+          })
+        }
       </div>
 
-    );
+
+    )
   }
 }
-
-
-export default Movie;
+ export default Movie;
 
