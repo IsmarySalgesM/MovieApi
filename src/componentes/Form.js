@@ -5,12 +5,10 @@ import '../App.css';
 const Form = (props) => {
     return (
         <form onSubmit={props.getMovie}>
-
-
             <InputGroup>
-                <Input text="text" name="movie" placeholder="Busca tus peliculas" />
+                <Input text="text" name="movie" />
             </InputGroup>
-            <Button  className="btnSearch">Busca tu movie</Button>
+            <Button className="btnSearch">Busca tu movie</Button>
         </form>
 
     );
