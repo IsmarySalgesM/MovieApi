@@ -16,7 +16,7 @@ class App extends Component {
   getMovie = async (e) => {
     e.preventDefault();
     let trailer = e.target.movie.value;
-    const apiMovie = await fetch(`http://www.omdbapi.com/?s=${trailer}&apikey=540c9b7f `)
+    const apiMovie = await fetch(`https://www.omdbapi.com/?s=${trailer}&apikey=540c9b7f `)
     const dataMovie = await apiMovie.json();
   
 
