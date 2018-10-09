@@ -8,22 +8,23 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-    movies : []
+    movies : [],
+  
     }
   }
 
   getMovie = async (e) => {
     e.preventDefault();
-    const trailer = e.target.elements.movie.value;
+    let trailer = e.target.movie.value;
     const apiMovie = await fetch(`http://www.omdbapi.com/?s=${trailer}&apikey=540c9b7f `)
     const dataMovie = await apiMovie.json();
-
-
+  
 
     if (trailer) {
       let movieMap = dataMovie.Search
       console.log(movieMap)
      this.setState({movies: movieMap})
+     
     } else {
       this.setState({
         movies : undefined
@@ -42,10 +43,10 @@ class App extends Component {
           <div className="main">
             <div className="container">
               <div className="row ">
-                <div className="col-12 col-md-4 title-container center">
+                <div className="col-12 col-lg-4 title-container center">
                   <Titulo />
                 </div>
-                <div className="col-12 col-md-8 form-container">
+                <div className="col-12 col-lg-8 form-container">
                   <Form getMovie={this.getMovie} />
                   <Movie
                     movies={this.state.movies}

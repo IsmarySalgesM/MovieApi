@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
-import { Card } from 'reactstrap';
-
+import {Card, CardBody} from 'reactstrap'
+import '../App.css';
 
 
 class Movie extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
-  
+
   }
   render() {
-    // console.log(this.props.movies)
+    console.log(this.props.movies)
     return (
       <div className='App-main'>
         {
           this.props.movies.map(elementMovie => {
             console.log(elementMovie)
             return (
-              <div className='App-box'>
-                <p> {elementMovie.Title} </p>           
+              <div>
+                <Card className="scale-in-center">
+                  <CardBody>
+                    <img className="rounded-circle" src={elementMovie.Poster} alt="Smiley face" height="42" width="42" />
+                    <p> Tittulo :{elementMovie.Title} </p>
+                    <p> Año de Publicación :{elementMovie.Year} </p>
+                  </CardBody>
+                </Card>
               </div>
             )
           })
@@ -29,5 +35,5 @@ class Movie extends Component {
     )
   }
 }
- export default Movie;
+export default Movie;
 

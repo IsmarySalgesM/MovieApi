@@ -1,17 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { InputGroup, Input, Button } from 'reactstrap';
+import '../App.css';
+
+const Form = (props) => {
+    return (
+        <form onSubmit={props.getMovie}>
 
 
-class Form extends Component {
-    render() {
-        return (
-            
-            <form onSubmit ={this.props.getMovie}>
-                <input text="text" name="movie" placeholder="Escoge tu pelicula favorita" />
-                <button>Busca tu Movie</button>
-            </form>
+            <InputGroup>
+                <Input text="text" name="movie" placeholder="Busca tus peliculas" />
+            </InputGroup>
+            <Button  className="btnSearch">Busca tu movie</Button>
+        </form>
 
-        );
-    }
+    );
 }
+
 
 export default Form;
