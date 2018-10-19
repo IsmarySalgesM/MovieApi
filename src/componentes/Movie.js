@@ -21,7 +21,7 @@ class Movie extends Component {
                   <CardBody>
                     {/* <p>Lo sentimos,({this.props.error}</p> */}
                     <img className="rounded-circle" src={elementMovie.Poster} alt="Smiley face" height="42" width="42" />
-                    <p> Tittulo :{elementMovie.Title} </p>
+                    <p> Titulo :{elementMovie.Title} </p>
                     <p> Año de Publicación :{elementMovie.Year} </p>
                   </CardBody>
                 </Card>
