@@ -9,6 +9,7 @@ class App extends Component {
     super()
     this.state = {
     movies : [],
+    error: false,
   
     }
   }
@@ -20,23 +21,27 @@ class App extends Component {
     const dataMovie = await apiMovie.json();
   
 
-    if (trailer) {
+    if (dataMovie.Response === "True") {
       let movieMap = dataMovie.Search
-      console.log(movieMap)
-     this.setState({movies: movieMap})
+      console.log(dataMovie.Response)
+     this.setState({
+       movies: movieMap,
+       error: false
+      })
+      
      
-    } else {
+    }else  {
+      console.log('true')
       this.setState({
-        movies : undefined
-
-
+        movies:dataMovie,
+        error: true
       })
     }
   }
 
 
   render() {
-    console.log(this.state.movies)
+    console.log(this.state.error)
     return (
       <div>
         <div className="wrapper">
@@ -45,11 +50,13 @@ class App extends Component {
               <div className="row ">
                 <div className="col-12 col-lg-4 title-container center">
                   <Titulo />
+                
                 </div>
                 <div className="col-12 col-lg-8 form-container">
                   <Form getMovie={this.getMovie} />
                   <Movie
                     movies={this.state.movies}
+                    errors={this.state.error} 
                   />
                 </div>
               </div>
