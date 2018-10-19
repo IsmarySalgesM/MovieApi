@@ -27,9 +27,7 @@ class App extends Component {
      this.setState({
        movies: movieMap,
        error: false
-      })
-      
-     
+      })   
     }else  {
       console.log('true')
       this.setState({
@@ -48,11 +46,11 @@ class App extends Component {
           <div className="main">
             <div className="container">
               <div className="row ">
-                <div className="col-12 col-lg-4 title-container center">
+                <div className="col-12 col-md-12 col-lg-12 title-container center">
                   <Titulo />
                 
                 </div>
-                <div className="col-12 col-lg-8 form-container">
+                <div className="col-12 col-md-12 col-lg-12 form-container">
                   <Form getMovie={this.getMovie} />
                   <Movie
                     movies={this.state.movies}

@@ -5,7 +5,7 @@ class Titulo extends Component {
   render() {
     return (
       <div>
-        <h3 className="tracking-in-expand">MovieApp</h3>       
+        <h3 className="tracking-in-expand expandCol">MOVIE-APP</h3>       
       </div>
     );
   }

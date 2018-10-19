@@ -13,7 +13,7 @@ class Movie extends Component {
     console.log(this.props.errors)
     return (
       <div className='App-main'>
-        {this.props.errors ? <div><p className="sorry">Lo sentimos :(, esta movie no esta en nuestra app</p></div> : this.props.movies.map(elementMovie => {
+        {this.props.errors ? <div><p className="sorry">Lo sentimos :( esta movie no esta en nuestra app</p></div> : this.props.movies.map(elementMovie => {
             console.log(elementMovie)
             return (
               <div>

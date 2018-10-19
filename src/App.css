@@ -25,15 +25,15 @@ body{
 .title-container {
   background: url("https://images.unsplash.com/photo-1507750549272-e58742b1df80?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f46d65078fa593524cdd5451b32cfb62&auto=format&fit=crop&w=750&q=80")center center no-repeat ;
   background-size: cover;
-  display: flex;
   align-items: flex-start;
   justify-content: center;
   text-align: center;
-  color: #f0140c;
+  text-shadow: 2px 2px #070606;
+  color: rgb(223, 155, 9) ;
 }
 
 .tracking-in-expand{
-  margin-top: 30%;
+  margin-top: 65%;
   position: relative;
 }
 .form-container {
@@ -54,11 +54,13 @@ text-align: center;
 /* Titulo */
 
 .scale-in-center {
-  margin-top: 10%;
-	-webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+margin-top: 10%;
+-webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-
+.expandCol{
+  width: 50%;
+}
 @-webkit-keyframes scale-in-center {
   0% {
     -webkit-transform: scale(0);
